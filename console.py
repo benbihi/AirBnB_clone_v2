@@ -141,7 +141,7 @@ class HBNBCommand(cmd.Cmd):
                     except ValueError:
                         continue  # Skip if not a valid integer
                 setattr(new_instance, key, value)
-        storage.save()
+        new_instance.save()
         print(new_instance.id)
         storage.save()
 
