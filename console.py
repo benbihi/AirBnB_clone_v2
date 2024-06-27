@@ -332,6 +332,21 @@ class HBNBCommand(cmd.Cmd):
         print("Updates an object with new information")
         print("Usage: update <className> <id> <attName> <attVal>\n")
 
+    def parse_value(self, value):
+        """Parse the value based on the specified syntax rules."""
+        try:
+            # Check for string value
+            if value.startswith('"') and value.endswith('"'):
+                value = value[1:-1].replace('_', ' ').replace('\\"', '"')
+            # Check for float value
+            elif '.' in value:
+                value = float(value)
+            # Default to integer
+            else:
+                value = int(value)
+            return value
+        except ValueError:
+            return None
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
