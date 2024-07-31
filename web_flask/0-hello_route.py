@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""
+'''
 Start my web app
-"""
+'''
 from flask import Flask
 
 
