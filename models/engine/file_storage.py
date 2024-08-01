@@ -8,6 +8,10 @@ class FileStorage:
     __file_path = 'file.json'
     __objects = {}
 
+    def close(self):
+        """function to calll reload function"""
+        self.reload()
+
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
         if cls is not None:
