@@ -20,7 +20,7 @@ def hbnb():
 
 
 @app.route('/c/<text>')
-def cistext():
+def cistext(text):
     """ Returns some text. """
     text_trimmed = text.replace('_', ' ')
     return 'c {}'.format(text_trimmed)
