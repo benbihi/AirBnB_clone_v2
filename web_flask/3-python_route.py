@@ -26,7 +26,7 @@ def cistext(text):
     return 'C {}'.format(text_trimmed)
 
 
-@app.route('/python', defaults={'text': "is cool"})
+@app.route('/python/', defaults={'text': "is cool"})
 @app.route('/python/<text>', strict_slashes=False)
 def python(text):
     """ Returns some text. """
