@@ -24,6 +24,8 @@ pwd = getenv("HBNB_MYSQL_PWD")
 host = getenv("HBNB_MYSQL_HOST")
 db = getenv("HBNB_MYSQL_DB")
 env = getenv("HBNB_ENV", "")
+
+
 class DBStorage:
     """DBStorage class"""
     __engine = None
@@ -31,8 +33,8 @@ class DBStorage:
 
     def __init__(self):
         """initialization of sqlalchemy storage"""
-        self.__engine = create_engine(f'mysql+mysqldb://{user}:{pwd}@{host}/{db}',
-                                      pool_pre_ping=True)
+        str = f'mysql+mysqldb://{user}:{pwd}@{host}/{db}'
+        self.__engine = create_engine(str, pool_pre_ping=True)
         if env == "test":
             Base.metadata.drop_all(self.__engine)
 
@@ -46,6 +48,7 @@ class DBStorage:
                     key = obj.__class__.__name__ + '.' + obj.id
                     dictionary[key] = obj
         return (dictionary)
+
     def new(self, obj):
         """add the object to the current database session"""
         self.__session.add(obj)
