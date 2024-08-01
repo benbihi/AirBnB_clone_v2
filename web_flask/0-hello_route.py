@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
-Start my web app
-'''
+"""
+starts a Flask web application
+"""
 from flask import Flask
 
 
@@ -10,9 +10,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=false)
 def home():
-    '''
-    home function
-    '''
+    """home function"""
     return "Hello HBNB!"
 
 
