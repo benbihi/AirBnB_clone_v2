@@ -5,6 +5,7 @@ from sqlalchemy import Column, String
 from sqlalchemy.ext.declarative import declarative_base
 from .base_model import BaseModel, Base
 from models import storage_t
+from models.city import City
 
 
 class State(BaseModel, Base):
@@ -22,7 +23,7 @@ class State(BaseModel, Base):
             linked to the current State
             """
             city_list = []
-            for city in models.storage.all("City").values():
+            for city in models.storage.all(City):
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
