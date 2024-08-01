@@ -19,7 +19,7 @@ def hbnb():
     return "HBNB"
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def cistext(text):
     """ Returns some text. """
     text_trimmed = text.replace('_', ' ')
