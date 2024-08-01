@@ -23,7 +23,7 @@ def hbnb():
 def cistext(text):
     """ Returns some text. """
     text_trimmed = text.replace('_', ' ')
-    return 'c {}'.format(text_trimmed)
+    return 'C {}'.format(text_trimmed)
 
 
 if __name__ == '__main__':
